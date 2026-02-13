@@ -1,0 +1,19 @@
+{
+  "name": "cypress-practice",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "cypress": "^15.10.0"
+  },
+  "dependencies": {
+    "eslint": "^10.0.0",
+    "prettier": "^3.8.1"
+  }
+}
