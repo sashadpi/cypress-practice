@@ -16,7 +16,7 @@ describe('Lesson19', () => {
 		cy.get('.header_inner button');
 	});
 
-	it.only('Contacts icon', () => {
+	it('Contacts icon', () => {
 		cy.get('.align-items-md-start').find('.socials_icon');
 	});
 });

@@ -7,10 +7,10 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    specPattern: "lesson-19/cy-test/*.cy.{js,jsx,ts,tsx}",
+    baseUrl: "https://guest:welcome2qauto@qauto.forstudy.space",
+    specPattern: "cy-test/*.cy.{js,jsx,ts,tsx}",
     video: false,
     screenshotOnRunFailure: true,
     defaultCommandTimeout: 5000,
-    baseUrl: "https://guest:welcome2qauto@qauto.forstudy.space",
   },
 });
