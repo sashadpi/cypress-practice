@@ -1,10 +1,9 @@
 /// <reference types="cypress" />
+beforeEach(() => {
+	cy.visit('/');
+});
 
 describe('Sign in check all field', () => {
-	beforeEach(() => {
-		cy.visit('/');
-	});
-
 	it('Valid Sign-in', () => {
 		cy.get('.header_right .header_signin').click();
 		cy.get('#signinEmail').type(Cypress.env('email'));
@@ -73,10 +72,6 @@ describe('Sign in check all field', () => {
 });
 
 describe('Sign-in buttons', () => {
-	beforeEach(() => {
-		cy.visit('/');
-	});
-
 	it('Sign-in close button', () => {
 		cy.get('.header_right .header_signin').click();
 		cy.get('.modal-header span').click();

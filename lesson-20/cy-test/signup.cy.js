@@ -1,8 +1,11 @@
 /// <reference types="cypress" />
 
+beforeEach(() => {
+	cy.visit('/');
+});
+
 describe('Validation input field', () => {
 	beforeEach(() => {
-		cy.visit('/');
 		cy.get('.btn-primary').click();
 	});
 	context('First name validation', () => {
@@ -160,10 +163,7 @@ describe('Validation input field', () => {
 	});
 });
 
-describe('Sign-up and Sign-in', () => {
-	beforeEach(() => {
-		cy.visit('/');
-	});
+describe('Sign-up finish test', () => {
 	it('Valid Sign-up', () => {
 		cy.get('.btn-primary').click();
 		cy.get('#signupName').type('John');
@@ -176,11 +176,7 @@ describe('Sign-up and Sign-in', () => {
 	});
 });
 
-describe('Sign-up and Sign-in buttons', () => {
-	beforeEach(() => {
-		cy.visit('/');
-	});
-
+describe('Sign-up buttons', () => {
 	it('Sign-up close button', () => {
 		cy.get('.btn-primary').click();
 		cy.get('.modal-header span').click();
