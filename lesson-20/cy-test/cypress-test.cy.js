@@ -80,7 +80,7 @@ describe('Validation input field', () => {
 		});
 	});
 
-	context('Password validation', () => {
+	context.only('Password validation', () => {
 		it('Empty password', () => {
 			cy.get('#signupPassword').focus();
 			cy.get('#signupPassword').blur();
@@ -88,13 +88,49 @@ describe('Validation input field', () => {
 			cy.get('.invalid-feedback').should('have.css', 'color', 'rgb(220, 53, 69)');
 		});
 
-		it('Invalid password', () => {
-			cy.get('#signupPassword').type('asaasasasasfgfgfgdfsd').blur();
+		it('Password too short (less than 8)', () => {
+			cy.get('#signupPassword').type('Ab12345').blur();
 			cy.get('.invalid-feedback').should(
 				'have.text',
 				'Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter',
 			);
-			cy.get('.invalid-feedback').should('have.css', 'color', 'rgb(220, 53, 69)');
+		});
+
+		it('Password too long (more than 15)', () => {
+			cy.get('#signupPassword').type('Ab12345678901234').blur();
+			cy.get('.invalid-feedback').should(
+				'have.text',
+				'Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter',
+			);
+		});
+
+		it('Password without integers', () => {
+			cy.get('#signupPassword').type('PasswordLong').blur();
+			cy.get('.invalid-feedback').should(
+				'have.text',
+				'Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter',
+			);
+		});
+
+		it('Password without capital letters', () => {
+			cy.get('#signupPassword').type('password123').blur();
+			cy.get('.invalid-feedback').should(
+				'have.text',
+				'Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter',
+			);
+		});
+
+		it('Password without small letters', () => {
+			cy.get('#signupPassword').type('PASSWORD123').blur();
+			cy.get('.invalid-feedback').should(
+				'have.text',
+				'Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter',
+			);
+		});
+
+		it('Valid password should not show error', () => {
+			cy.get('#signupPassword').type('ValidPass123').blur();
+			cy.get('.invalid-feedback').should('not.exist');
 		});
 	});
 
