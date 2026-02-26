@@ -3,7 +3,7 @@ const { defineConfig } = require('cypress');
 module.exports = defineConfig({
 	allowCypressEnv: true,
 	env: {
-		email: 'sashadpi68@gmail.com',
+		email: 'sashadpi68+2@gmail.com',
 		password: '!Pre2225500',
 	},
 
@@ -15,6 +15,6 @@ module.exports = defineConfig({
 		video: false,
 		screenshotOnRunFailure: true,
 		defaultCommandTimeout: 5000,
-		baseUrl: 'https://guest:welcome2qauto@qauto.forstudy.space',
+		baseUrl: 'https://guest:welcome2qauto@qauto2.forstudy.space',
 	},
 });
