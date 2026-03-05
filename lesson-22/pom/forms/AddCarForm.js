@@ -23,7 +23,7 @@ class AddCarForm {
 		return cy.get('.invalid-feedback');
 	}
 
-	selectParam(brand, model, mileage) {
+	fillCarAddingForm(brand, model, mileage) {
 		this.brandSelect.select(brand);
 		this.modelSelect.select(model);
 		this.addCarMileage.type(mileage);
@@ -37,8 +37,6 @@ class AddCarForm {
 		this.addCarMileage.focus();
 		this.addCarMileage.blur();
 	}
-
-	
 }
 
 export default new AddCarForm();

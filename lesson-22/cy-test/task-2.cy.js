@@ -15,17 +15,17 @@ beforeEach(() => {
 describe('Garage Tests', () => {
 	context('Add cars', () => {
 		it('Add a first car', () => {
-			AddCarForm.selectParam('Ford', 'Fiesta', 250);
+			AddCarForm.fillCarAddingForm('Ford', 'Fiesta', 250);
 			AddCarForm.modalAddButton.click();
 		});
 
 		it('Add a second car', () => {
-			AddCarForm.selectParam('Audi', 'TT', 54000);
+			AddCarForm.fillCarAddingForm('Audi', 'TT', 54000);
 			AddCarForm.modalAddButton.click();
 		});
 
 		it('Add a third car', () => {
-			AddCarForm.selectParam('BMW', '5', 4500);
+			AddCarForm.fillCarAddingForm('BMW', '5', 4500);
 			AddCarForm.modalAddButton.click();
 		});
 	});
