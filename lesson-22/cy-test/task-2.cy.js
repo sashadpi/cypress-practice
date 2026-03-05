@@ -14,6 +14,15 @@ beforeEach(() => {
 
 describe('Garage Tests', () => {
 	context('Add cars', () => {
+		afterEach(() => {
+			cy.request('GET', '/api/cars').then((response) => {
+				const cars = response.body.data;
+				const lastCar = cars[cars.length - 1];
+
+				expect(response.status).to.eq(200);
+				expect(lastCar).to.have.property('id');
+			});
+		});
 		it('Add a first car', () => {
 			AddCarForm.fillCarAddingForm('Ford', 'Fiesta', 250);
 			AddCarForm.modalAddButton.click();
