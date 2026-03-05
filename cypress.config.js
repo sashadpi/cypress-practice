@@ -11,7 +11,7 @@ module.exports = defineConfig({
 		setupNodeEvents(on, config) {
 			// implement node event listeners here
 		},
-		specPattern: 'lesson-21/cy-test/*.cy.{js,jsx,ts,tsx}',
+		specPattern: 'lesson-22/cy-test/*.cy.{js,jsx,ts,tsx}',
 		video: false,
 		screenshotOnRunFailure: true,
 		defaultCommandTimeout: 5000,

@@ -17,7 +17,7 @@ describe('Add an expense', () => {
 	context('Add and delete fuel expenses to the car', () => {
 		beforeEach(() => {
 			GaragePage.openAddCarForm();
-			AddCarForm.selectParam('Porsche', '911', 450);
+			AddCarForm.fillCarAddingForm('Porsche', '911', 450);
 			AddCarForm.modalAddButton.click();
 			GaragePage.addFuelExpence.first().click();
 		});
@@ -38,7 +38,7 @@ describe('Add an expense', () => {
 	context('Add liters and cost in field', () => {
 		beforeEach(() => {
 			GaragePage.openAddCarForm();
-			AddCarForm.selectParam('Ford', 'Fiesta', 8002);
+			AddCarForm.fillCarAddingForm('Ford', 'Fiesta', 8002);
 			AddCarForm.modalAddButton.click();
 			GaragePage.expensesPageButton.click();
 			ExpensesPage.addAnExpenseButton.click();

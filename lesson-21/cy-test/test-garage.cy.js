@@ -29,7 +29,7 @@ describe('Garage Tests', () => {
 
 		it('Select brand, model, mileage', () => {
 			GaragePage.openAddCarForm();
-			AddCarForm.selectParam('Ford', 'Fiesta', 20);
+			AddCarForm.fillCarAddingForm('Ford', 'Fiesta', 20);
 		});
 	});
 
@@ -60,7 +60,7 @@ describe('Garage Tests', () => {
 		});
 		it('Add car to Garage', () => {
 			GaragePage.openAddCarForm();
-			AddCarForm.selectParam('BMW', 'X5', 150);
+			AddCarForm.fillCarAddingForm('BMW', 'X5', 150);
 			AddCarForm.modalAddButton.click();
 			GaragePage.editCar.should('be.visible');
 		});
@@ -69,7 +69,7 @@ describe('Garage Tests', () => {
 	context('Add liters and cost in field', () => {
 		beforeEach(() => {
 			GaragePage.openAddCarForm();
-			AddCarForm.selectParam('Ford', 'Fiesta', 250);
+			AddCarForm.fillCarAddingForm('Ford', 'Fiesta', 250);
 			AddCarForm.modalAddButton.click();
 			GaragePage.addFuelExpence.first().click();
 		});
@@ -106,7 +106,7 @@ describe('Garage Tests', () => {
 	context('Add expense fuel', () => {
 		beforeEach(() => {
 			GaragePage.openAddCarForm();
-			AddCarForm.selectParam('Porsche', '911', 450);
+			AddCarForm.fillCarAddingForm('Porsche', '911', 450);
 			AddCarForm.modalAddButton.click();
 			GaragePage.addFuelExpence.first().click();
 		});
